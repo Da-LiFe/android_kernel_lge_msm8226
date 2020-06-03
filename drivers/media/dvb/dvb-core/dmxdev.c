@@ -2487,7 +2487,7 @@ static int dvb_dmxdev_section_callback(const u8 *buffer1, size_t buffer1_len,
 		ret = dvb_dmxdev_buffer_write(&dmxdevfilter->buffer, buffer2,
 					      buffer2_len);
 
-	if (ret < 0) {
+	if (ret < 0)
 		dvb_dmxdev_flush_events(&dmxdevfilter->events);
 		dmxdevfilter->buffer.error = ret;
 
@@ -2504,7 +2504,6 @@ static int dvb_dmxdev_section_callback(const u8 *buffer1, size_t buffer1_len,
 					DMX_FILTER_CC_ERROR;
 		else
 			event.params.section.flags = 0;
-	}
 
 	dvb_dmxdev_add_event(&dmxdevfilter->events, &event);
 

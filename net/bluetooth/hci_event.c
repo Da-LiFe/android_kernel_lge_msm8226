@@ -3705,7 +3705,7 @@ void hci_event_packet(struct hci_dev *hdev, struct sk_buff *skb)
 
 	kfree_skb(skb);
 	hdev->stat.evt_rx++;
-}
+ }
 
 /* Generate internal stack event */
 void hci_si_event(struct hci_dev *hdev, int type, int dlen, void *data)
